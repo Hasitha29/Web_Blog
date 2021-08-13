@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class Isadmin
 {
@@ -16,6 +17,12 @@ class Isadmin
      */
     public function handle(Request $request, Closure $next)
     {
-        return $next($request);
+        if(Auth()->user()->IsAdmin()){
+            return $next($request);
+        }
+        else{
+            return back();
+        }
+
     }
 }

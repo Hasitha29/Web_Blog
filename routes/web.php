@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\welcomeController;
 use App\Http\Controllers\postcontroller;
 use Illuminate\Support\Facades\Route;
@@ -30,3 +31,5 @@ Route::get('/post/{postId}/edit', [postcontroller::class, 'edit'])->name('post.e
 Route::post('/post/{postId}/update', [postcontroller::class, 'update'])->name('post.update');
 Route::get('/post/{postId}/delete', [postcontroller::class, 'delete'])->name('post.delete');
 
+//admin
+Route::get('/admin/dashboard', [DashboardController::class, 'index'])->middleware('admin')->name('post.admin');
