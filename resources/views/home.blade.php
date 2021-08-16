@@ -16,20 +16,21 @@
 
                     {{ __('You are logged in!') }}
 
-<form method="post" action="{{route('post.store')}}">
-    @csrf
-  <div class="form-group">
-    <label>Post Title</label>
-    <input type="tex" class="form-control" name="title"  placeholder="Enter post title" required>
- </div>
- <div class="form-group">
-    <label>Post Description</label>
-    <textarea class="form-control" name="description" placeholder="Enter Post Description" rows="10" required></textarea>
-</div>
-  
-  <button type="submit" class="btn btn-primary">Post</button>
-</form>
-
+                    <form method="post" action="{{ route('post.store') }}" enctype="multipart/form-data">
+                        @csrf
+                        <div class="form-group">
+                          <label>Post Title</label>
+                          <input type="text" name="title" class="form-control" placeholder="Enter post title" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Post Description</label>
+                            <textarea class="form-control" name="description" placeholder="Enter post description" rows="10" required></textarea>
+                          </div>
+                        <div class="form-group">
+                            <input class="form-control" name="thumbnail" type="file">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Post</button>
+                      </form>
                 </div>
             </div>
         </div>
