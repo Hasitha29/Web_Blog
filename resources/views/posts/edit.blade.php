@@ -26,7 +26,7 @@
     <label>Edit Post Description</label>
     <textarea class="form-control" name="description" placeholder="Enter Post Description" rows="10"></textarea>
 </div>
-  
+
   <button type="submit" class="btn btn-primary">Update</button>
 </form>
 
